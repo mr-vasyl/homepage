@@ -14,8 +14,8 @@ body {
   --secondary-text-color: #5c5c62;
   --durability-text-color: #6a737d9c;
   --icon-color: #6a737d;
-  --border-color: #7c25b6;
-  --text-decoration-color: #9a00ff;
+  --border-color: #24201e;
+  --text-decoration-color: #634838e8;
 }
 
 .container {
@@ -28,6 +28,13 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+}
+.fh-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
 }
 
 .fh {
@@ -112,10 +119,10 @@ body {
   justify-content: start;
 }
 
-.contact-info__item:not(:last-child) {
+/* .contact-info__item:not(:last-child) {
   margin-bottom: 20px;
 }
-
+ */
 .contact-info__item-icon-wrapper {
   margin-right: 10px;
   width: 20px;
@@ -128,17 +135,18 @@ body {
 }
 
 .contact-info__item-icon {
-  height: 1.1428rem;
+  height: 2.1428rem;
   vertical-align: text-bottom;
 }
 
 .contact-info__avatar {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  border-radius: 5%;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
-  border: 3px solid;
+  border: 10px solid;
   border-color: var(--text-decoration-color);
+  border-style: inset;
 }
 
 /* Intro and skills styles */
