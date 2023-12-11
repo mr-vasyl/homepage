@@ -1,4 +1,12 @@
 /* General styles */
+:root {
+  --primary-text-color: #181820;
+  --secondary-text-color: #5c5c62;
+  --durability-text-color: #6a737d9c;
+  --icon-color: #6a737d;
+  --border-color: #24201e;
+  --text-decoration-color: #2b797f;
+}
 
 * {
   margin: 0;
@@ -10,12 +18,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
 
-  --primary-text-color: #181820;
-  --secondary-text-color: #5c5c62;
-  --durability-text-color: #6a737d9c;
-  --icon-color: #6a737d;
-  --border-color: #ff9a0045;
-  --text-decoration-color: #ff9a00;
+  color: var(--primary-text-color);
+  text-decoration-color: var(--text-decoration-color);
+}
+
+.contacts-footer li {
+  list-style-type: none;
 }
 
 .container {
@@ -24,16 +32,31 @@ body {
   max-width: 900px;
 }
 
-.fh {
+.fh-about {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.contacts-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.fh {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 18px;
 }
 
 .fv {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .resume {
@@ -45,23 +68,29 @@ body {
 }
 
 .resume__block {
-  border-bottom: 3px solid var(--border-color);
+  border: 5px solid transparent;
+  border-image: linear-gradient(to right, transparent 30%, #12474b 100%);
+  border-image-slice: 1;
   padding-bottom: 30px;
   margin-bottom: 15px;
 }
+@media screen and (max-width: 600px) {
+  .contact_info_container {
+    flex-direction: column;
+  }
+
+  .fh {
+    margin-top: 0px;
+  }
+}
 
 @media screen and (max-width: 576px) {
-  .main-info,
-  .contact_info_container {
+  .main-info {
     flex-direction: column;
   }
 
   .contact_info_container {
     align-items: center;
-  }
-
-  .contact-info__block:not(:last-child) {
-    margin-bottom: 20px;
   }
 
   .experiences {
@@ -86,12 +115,7 @@ body {
 .contact-info__sub-header {
   color: var(--secondary-text-color);
   margin-bottom: 30px;
-}
-
-.contact-info__block {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  padding: 0 5px;
 }
 
 .contact-info__block--center {
@@ -102,11 +126,13 @@ body {
   color: var(--secondary-text-color);
   text-decoration: none;
   display: flex;
+  align-items: center;
   justify-content: start;
 }
 
-.contact-info__item:not(:last-child) {
-  margin-bottom: 20px;
+.contact-info__item:hover {
+  transition: color 0.5s;
+  color: #2b797f;
 }
 
 .contact-info__item-icon-wrapper {
@@ -121,17 +147,18 @@ body {
 }
 
 .contact-info__item-icon {
-  height: 1.1428rem;
+  height: 2.1428rem;
   vertical-align: text-bottom;
 }
 
 .contact-info__avatar {
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  border-radius: 5%;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
-  border: 3px solid;
+  border: 10px solid;
   border-color: var(--text-decoration-color);
+  border-style: inset;
 }
 
 /* Intro and skills styles */
@@ -160,6 +187,10 @@ body {
 .intro_text {
   color: var(--secondary-text-color);
   text-align: justify;
+  padding: 10px 10px 10px;
+}
+.skills {
+  padding: 10px;
 }
 
 .skills__header {
@@ -170,14 +201,19 @@ body {
 
 .skills__text {
   color: var(--secondary-text-color);
-  text-align: justify;
+  text-align: center;
 }
 
 /* Experience and additional info styles */
 
+.main-info {
+  padding: 15px 30px;
+  display: flex;
+  gap: 10px;
+}
+
 .experiences {
-  flex: 1 1 60%;
-  margin-right: 50px;
+  flex: 1 1 50%;
 }
 
 .experiences__header {
@@ -221,11 +257,10 @@ body {
 
 .experiences__company-project-responsibilities {
   color: var(--secondary-text-color);
-  padding-left: 20px;
 }
 
 .additional-info {
-  flex: 1 1 40%;
+  flex: 1 1 50%;
 }
 
 .additional-info__education {
