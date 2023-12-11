@@ -15,7 +15,7 @@ body {
   --durability-text-color: #6a737d9c;
   --icon-color: #6a737d;
   --border-color: #24201e;
-  --text-decoration-color: #634838e8;
+  --text-decoration-color: #2b797f;
 }
 
 .container {
@@ -23,6 +23,7 @@ body {
   padding: 0 30px;
   max-width: 900px;
 }
+
 .fh-about {
   display: flex;
   flex-direction: row;
@@ -42,13 +43,12 @@ body {
   align-items: center;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 25px;
+  margin-top: 18px;
 }
 
 .fv {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .resume {
@@ -66,10 +66,18 @@ body {
   padding-bottom: 30px;
   margin-bottom: 15px;
 }
+@media screen and (max-width: 600px) {
+  .contact_info_container {
+    flex-direction: column;
+  }
+
+  .fh {
+    margin-top: 0px;
+  }
+}
 
 @media screen and (max-width: 576px) {
-  .main-info,
-  .contact_info_container {
+  .main-info {
     flex-direction: column;
   }
 
@@ -77,15 +85,8 @@ body {
     align-items: center;
   }
 
-  .contact-info__block:not(:last-child) {
-    margin-bottom: 20px;
-  }
-
   .experiences {
     margin-right: 0;
-  }
-  .fh {
-    margin-top: 0px;
   }
 }
 
@@ -106,12 +107,7 @@ body {
 .contact-info__sub-header {
   color: var(--secondary-text-color);
   margin-bottom: 30px;
-}
-
-.contact-info__block {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  padding: 0 5px;
 }
 
 .contact-info__block--center {
@@ -126,10 +122,11 @@ body {
   justify-content: start;
 }
 
-/* .contact-info__item:not(:last-child) {
-  margin-bottom: 20px;
+.contact-info__item:hover {
+  transition: color 0.5s;
+  color: #2b797f;
 }
- */
+
 .contact-info__item-icon-wrapper {
   margin-right: 10px;
   width: 20px;
@@ -182,6 +179,10 @@ body {
 .intro_text {
   color: var(--secondary-text-color);
   text-align: justify;
+  padding: 10px 10px 10px;
+}
+.skills {
+  padding: 10px;
 }
 
 .skills__header {
@@ -197,9 +198,14 @@ body {
 
 /* Experience and additional info styles */
 
+.main-info {
+  padding: 15px 10px;
+  display: flex;
+  gap: 10px;
+}
+
 .experiences {
-  flex: 1 1 60%;
-  margin-right: 50px;
+  flex: 1 1 50%;
 }
 
 .experiences__header {
@@ -247,7 +253,7 @@ body {
 }
 
 .additional-info {
-  flex: 1 1 40%;
+  flex: 1 1 50%;
 }
 
 .additional-info__education {
